@@ -24,9 +24,10 @@ class Pages extends Controller {
     * In this example, $page = home means that home.php will be served when 
     * page/home is requested.
     * @param string assigned to a variable
+    * queries: localhost/pages/view ~ /view/home ~ /view/about
      */
 
-    public function view($page = 'home'){
+    public function view($page = 'about'){
         //if the page doesn't exist on the views
         if (! is_file(APPPATH.'/Views/pages/'.$page.'.php')){
             throw new \CodeIgniter\Exceptions\PageNotFoundException(($page));
