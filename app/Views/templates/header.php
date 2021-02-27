@@ -230,7 +230,7 @@
 
 		<div class="menu">
 			<ul>
-				<li class="logo"><a href="#"><img height="44" title="CodeIgniter Logo" alt="Visit CodeIgniter.com official website!" src="../../public/index.png"></a>
+				<li class="logo"><a href="#"><img height="44" title="CodeIgniter Logo" alt="Visit CodeIgniter.com official website!" src="/codeigniter.png"></a>
 				</li>
 				<li class="menu-toggle">
 					<button onclick="toggleMenu();">&#9776;</button>

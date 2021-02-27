@@ -12,9 +12,13 @@ class Pages extends Controller {
     * @return $string [view]
     * @since 1.0.0
      */
-    public function index(){
-        //returns php from Views folder with the name as string
-        return view('pages_archive');
+    public function index($page = "pages"){
+         $data['title'] = ucfirst($page); //capitalize first letter
+         var_dump($data);
+            echo view('templates/header', $data);
+            echo view('pages_archive');
+            echo view('templates/footer', $data);
+
     }
 
     /**
@@ -36,6 +40,7 @@ class Pages extends Controller {
         $data['title'] = ucfirst($page); //capitalize first letter
 
         echo view('templates/header', $data);
+        var_dump($data);
         echo view('pages/'.$page, $data);
         echo view('templates/footer', $data);
     }
