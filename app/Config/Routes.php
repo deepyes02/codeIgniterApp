@@ -22,7 +22,10 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+// set autoRouting to false since when are manually specifying the routes
+// $routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
+
 
 /*
  * --------------------------------------------------------------------
@@ -30,9 +33,17 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
+/* 	We get a performance increase by specifying the default
+	route since we don't have to scan directories.
+DEEPESH'S COMMENT --> ##########################
+	This route says that any incoming request without any content specified should be handled by the index() method inside the Home controller.
 $routes->get('/', 'Home::index');
+
+*/
+$routes->get('/', 'Home::index');
+$routes->get('news', 'News::index');
+$routes->get('news/(:segment)', 'News::view/$1');
+$routes->get('(:any)', 'Pages::view/$1');
 
 /*
  * --------------------------------------------------------------------
